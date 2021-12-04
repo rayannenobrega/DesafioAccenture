@@ -6,8 +6,11 @@ import org.openqa.selenium.support.ui.Select;
 
 public class EnterVehicleDataPage extends BasePage {
 
-    public EnterVehicleDataPage(WebDriver driver) { super(driver); }
+    public EnterVehicleDataPage(WebDriver driver) {
+        super(driver);
+    }
 
+    private By automobileNavBy = By.id("nav_automobile");
     private By makeBy = By.id("make");
     private By enginePerformaceBy = By.id("engineperformance");
     private By dateOfManyfactureBy = By.id("dateofmanufacture");
@@ -17,45 +20,69 @@ public class EnterVehicleDataPage extends BasePage {
     private By licensePlateNumberBy = By.id("licenseplatenumber");
     private By annualMileageBy = By.id("annualmileage");
     private By nextButtonBy = By.id("nextenterinsurantdata");
+    private By headerBy = By.xpath("//*[@id=\"entervehicledata\"]/..");
 
-    public void informaMakeByIndex(int index){
-        Select makeDropDown = new Select(driver.findElement(makeBy));
-        makeDropDown.selectByIndex(index);
+
+    public EnterVehicleDataPage acessaAbaAutomobileInsurance() {
+
+        driver.findElement(automobileNavBy).click();
+        return this;
+
     }
 
-    public void informaEnginePerformace(int value){
+    public boolean estaNaEnterVehicleDataPage() {
+
+        return driver.findElement(headerBy).getAttribute("class").contains("idealsteps-step-active");
+
+    }
+
+    public EnterVehicleDataPage informaMakeByIndex(int index) {
+        Select makeDropDown = new Select(driver.findElement(makeBy));
+        makeDropDown.selectByIndex(index);
+        return this;
+    }
+
+    public EnterVehicleDataPage informaEnginePerformace(int value) {
         driver.findElement(enginePerformaceBy).sendKeys(Integer.toString(value));
+        return this;
     }
 
     //precisa ser uma data inferior ao dia atual
-    public void informaDateOfManufacture(String date){
+    public EnterVehicleDataPage informaDateOfManufacture(String date) {
         driver.findElement(dateOfManyfactureBy).sendKeys(date);
+        return this;
     }
 
-    public void informaNumberOfSeatsByValue(String value){
+    public EnterVehicleDataPage informaNumberOfSeatsByIndex(int index) {
         Select seatDropDownm = new Select(driver.findElement(numberOfSeatsBy));
-        seatDropDownm.selectByValue(value);
+        seatDropDownm.selectByIndex(index);
+        return this;
     }
 
-    public void informaFuelType(int index){
+    public EnterVehicleDataPage informaFuelTypeByIndex(int index) {
         Select fuelDropDown = new Select(driver.findElement(fuelTypeBy));
         fuelDropDown.selectByIndex(index);
+        return this;
     }
 
-    public void informaListPrice(double value){
+    public EnterVehicleDataPage informaListPrice(double value) {
         driver.findElement(listPriceBy).sendKeys(Double.toString(value));
+        return this;
     }
 
-    public void informaLicensePlateNumber(String value){
+    public EnterVehicleDataPage informaLicensePlateNumber(String value) {
         driver.findElement(licensePlateNumberBy).sendKeys(value);
+        return this;
     }
 
-    public void informaAnnualMileage (double value){
+    public EnterVehicleDataPage informaAnnualMileage(double value) {
         driver.findElement(annualMileageBy).sendKeys(Double.toString(value));
+        return this;
     }
 
-    public void clicaNextButton(){
+    public EnterVehicleDataPage clicaNextButton() {
         driver.findElement(nextButtonBy).click();
+        return this;
     }
 
 }
