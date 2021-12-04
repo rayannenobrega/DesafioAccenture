@@ -6,13 +6,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.*;
 
 import static org.junit.Assert.assertTrue;
@@ -128,15 +124,10 @@ public class CadastroSteps {
     @Then("Realiza cadastro com Sucesso")
     public void realizaCadastroComSucesso() {
 
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("confirm")));
-
-        String msg = driver.findElement(By.xpath("//div['sweet-alert showSweetAlert visible']//h2")).getText();
-        Assert.assertEquals("Sending e-mail success!", msg);
-
-        driver.findElement(By.xpath("//div['sweet-alert showSweetAlert visible']//button[@class='confirm']")).click();
+        sendQuotePage
+                .isCadastroRealizadoComSucesso()
+                .clickOkButton()
+        ;
 
     }
-
-
 }

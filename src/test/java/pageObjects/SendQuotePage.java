@@ -1,7 +1,10 @@
 package pageObjects;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SendQuotePage extends BasePage {
 
@@ -16,6 +19,8 @@ public class SendQuotePage extends BasePage {
     private By confirmPasswordBy = By.id("confirmpassword");
     private By commentsBy = By.id("Comments");
     private By sendButtonBy = By.id("sendemail");
+    private By sweetAlertMsgBy = By.xpath("//div['sweet-alert showSweetAlert visible']//h2");
+    private By sweetAlertButtonBy = By.xpath("//div['sweet-alert showSweetAlert visible']//button[@class='confirm']");
 
     public SendQuotePage setEmail(String email) {
         driver.findElement(emailBy).sendKeys(email);
@@ -51,5 +56,20 @@ public class SendQuotePage extends BasePage {
         driver.findElement(sendButtonBy).click();
         return this;
     }
+
+    public SendQuotePage isCadastroRealizadoComSucesso(){
+
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("confirm")));
+        String msg = driver.findElement(sweetAlertMsgBy).getText();
+        Assert.assertEquals("Sending e-mail success!", msg);
+        return this;
+    }
+
+    public SendQuotePage clickOkButton(){
+        driver.findElement(sweetAlertButtonBy).click();
+        return this;
+    }
+
 
 }
