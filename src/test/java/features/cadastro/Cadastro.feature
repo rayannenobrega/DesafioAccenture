@@ -9,3 +9,4 @@ Feature: Fazer cadastro do seguro do automóvel da Tricentis
     And Preenche formulário EnterProductData corretamente
     And Preenche opção de preço no SelectPriceOption corretamente
     And Preenche formulário SendQuote corretamente
+    Then Realiza cadastro com Sucesso

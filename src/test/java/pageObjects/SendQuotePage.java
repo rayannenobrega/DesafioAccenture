@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 
 public class SendQuotePage extends BasePage {
 
-    public SendQuotePage(WebDriver driver) { super(driver); }
+    public SendQuotePage(WebDriver driver) {
+        super(driver);
+    }
 
     private By emailBy = By.id("email");
     private By phoneBy = By.id("phone");
@@ -19,18 +21,22 @@ public class SendQuotePage extends BasePage {
         driver.findElement(emailBy).sendKeys(email);
         return this;
     }
+
     public SendQuotePage setPhone(int phone) {
         driver.findElement(phoneBy).sendKeys(Integer.toString(phone));
         return this;
     }
+
     public SendQuotePage setUsername(String username) {
         driver.findElement(usernameBy).sendKeys(username);
         return this;
     }
+
     public SendQuotePage setPassword(String password) {
         driver.findElement(passwordBy).sendKeys(password);
         return this;
     }
+
     public SendQuotePage setConfirmPassword(String password) {
         driver.findElement(confirmPasswordBy).sendKeys(password);
         return this;
@@ -40,8 +46,10 @@ public class SendQuotePage extends BasePage {
         driver.findElement(commentsBy).sendKeys(comment);
         return this;
     }
+
     public SendQuotePage clickSendButton() {
         driver.findElement(sendButtonBy).click();
         return this;
     }
+
 }

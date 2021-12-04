@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class EnterProductDataPage extends BasePage{
+public class EnterProductDataPage extends BasePage {
 
     public EnterProductDataPage(WebDriver driver) {
         super(driver);
@@ -30,12 +30,14 @@ public class EnterProductDataPage extends BasePage{
         insuranceDropDown.selectByIndex(index);
         return this;
     }
-    public EnterProductDataPage setMeritRating(int index){
+
+    public EnterProductDataPage setMeritRating(int index) {
         Select meritDropDown = new Select(driver.findElement(meritRatingBy));
         meritDropDown.selectByIndex(index);
         return this;
     }
-    public EnterProductDataPage setDamageInsurance(int index){
+
+    public EnterProductDataPage setDamageInsurance(int index) {
         Select damageDropDown = new Select(driver.findElement(damageInsuranceBy));
         damageDropDown.selectByIndex(index);
         return this;
@@ -51,7 +53,7 @@ public class EnterProductDataPage extends BasePage{
         return this;
     }
 
-    public EnterProductDataPage setCourtesyCar(int index){
+    public EnterProductDataPage setCourtesyCar(int index) {
         Select courtesyDropDown = new Select(driver.findElement(courtesyCarBy));
         courtesyDropDown.selectByIndex(index);
         return this;

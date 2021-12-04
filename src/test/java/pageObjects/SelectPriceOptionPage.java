@@ -5,9 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
-public class SelectPriceOptionPage extends BasePage{
+public class SelectPriceOptionPage extends BasePage {
 
     public SelectPriceOptionPage(WebDriver driver) {
         super(driver);
@@ -39,8 +37,8 @@ public class SelectPriceOptionPage extends BasePage{
         return this;
     }
 
-    public SelectPriceOptionPage clickNextButton() throws InterruptedException{
-        WebDriverWait wait = new WebDriverWait(driver,30);
+    public SelectPriceOptionPage clickNextButton() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(nextButtonBy));
         driver.findElement(nextButtonBy).click();
         return this;

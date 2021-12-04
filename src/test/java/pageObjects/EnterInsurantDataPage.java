@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class EnterInsurantDataPage extends BasePage{
+public class EnterInsurantDataPage extends BasePage {
 
     public EnterInsurantDataPage(WebDriver driver) {
         super(driver);
@@ -22,12 +22,12 @@ public class EnterInsurantDataPage extends BasePage{
     private By occupationBy = By.id("occupation");
     private By hobbieSpeedingBy = By.xpath("//input[@id=\"speeding\"]/..");
     private By hobbieBungeeJumpingBy = By.xpath("//input[@id=\"bungeejumping\"]/..");
-    private By hobbieCliffDivingBy =By.xpath("//input[@id=\"cliffdiving\"]/..");
+    private By hobbieCliffDivingBy = By.xpath("//input[@id=\"cliffdiving\"]/..");
     private By hobbieSkydivingBy = By.xpath("//input[@id=\"skydiving\"]/..");
     private By hobbieOtherBy = By.xpath("//input[@id=\"other\"]/..");
     private By websiteBy = By.id("website");
     private By pictureBy = By.id("picture");
-   // private By headerBy = By.xpath("//*[@id=\"enterinsurantdata\"]/..");
+    // private By headerBy = By.xpath("//*[@id=\"enterinsurantdata\"]/..");
     private By nextButtonBy = By.id("nextenterproductdata");
 
 
@@ -53,12 +53,12 @@ public class EnterInsurantDataPage extends BasePage{
         return this;
     }
 
-    public EnterInsurantDataPage setGenderMale () {
+    public EnterInsurantDataPage setGenderMale() {
         driver.findElement(genderMaleBy).click();
         return this;
     }
 
-    public EnterInsurantDataPage setGenderFemale () {
+    public EnterInsurantDataPage setGenderFemale() {
         driver.findElement(genderFemaleBy).click();
         return this;
     }
@@ -91,27 +91,27 @@ public class EnterInsurantDataPage extends BasePage{
     }
 
     // Hobbies
-    public EnterInsurantDataPage setHobbieSpeeding () {
+    public EnterInsurantDataPage setHobbieSpeeding() {
         driver.findElement(hobbieSpeedingBy).click();
         return this;
     }
 
-    public EnterInsurantDataPage setHobbieBungeeJumping () {
+    public EnterInsurantDataPage setHobbieBungeeJumping() {
         driver.findElement(hobbieBungeeJumpingBy).click();
         return this;
     }
 
-    public EnterInsurantDataPage setHobbieCliffDiving () {
+    public EnterInsurantDataPage setHobbieCliffDiving() {
         driver.findElement(hobbieCliffDivingBy).click();
         return this;
     }
 
-    public EnterInsurantDataPage setHobbieSkydiving () {
+    public EnterInsurantDataPage setHobbieSkydiving() {
         driver.findElement(hobbieSkydivingBy).click();
         return this;
     }
 
-    public EnterInsurantDataPage setHobbieOther () {
+    public EnterInsurantDataPage setHobbieOther() {
         driver.findElement(hobbieOtherBy).click();
         return this;
     }

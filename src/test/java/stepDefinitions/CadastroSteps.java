@@ -4,14 +4,18 @@ package stepDefinitions;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.eo.Se;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.*;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 
 public class CadastroSteps {
@@ -27,7 +31,7 @@ public class CadastroSteps {
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
-        driver = new ChromeDriver( options );
+        driver = new ChromeDriver(options);
 
         driver.get("http://sampleapp.tricentis.com/101/app.php");
 
@@ -47,7 +51,7 @@ public class CadastroSteps {
     }
 
     @When("Preenche formulário EnterVehicleData corretamente")
-    public void preencheFormularioEnterVehicleDataCorretamente(){
+    public void preencheFormularioEnterVehicleDataCorretamente() {
         enterVehicleDataPage
                 .accessAbaAutomobileInsurance()
                 .setMakeByIndex(1)
@@ -64,7 +68,7 @@ public class CadastroSteps {
     }
 
     @And("Preenche formulário EnterInsurantData corretamente")
-    public void preencheFormularioEnterInsurantDataCorretamente(){
+    public void preencheFormularioEnterInsurantDataCorretamente() {
         enterInsurantDataPage
                 .setFirstName("Nome")
                 .setLastName("Sobrenome")
@@ -86,7 +90,7 @@ public class CadastroSteps {
     }
 
     @And("Preenche formulário EnterProductData corretamente")
-    public void preencheFormularioEnterProductDataCorretamente(){
+    public void preencheFormularioEnterProductDataCorretamente() {
         enterProductDataPage
                 .setStartDate("04/04/2022")
                 .setInsuranceSum(1)
@@ -100,7 +104,7 @@ public class CadastroSteps {
     }
 
     @And("Preenche opção de preço no SelectPriceOption corretamente")
-    public void selecionaOpcaoPrecoSelectPriceOptionCorretamente() throws InterruptedException{
+    public void selecionaOpcaoPrecoSelectPriceOptionCorretamente() throws InterruptedException {
         selectPriceOptionPage
                 .setOptionalSilver()
                 .clickNextButton()
@@ -109,7 +113,7 @@ public class CadastroSteps {
     }
 
     @And("Preenche formulário SendQuote corretamente")
-    public void preencheFormularioSendQuoteCorretamente(){
+    public void preencheFormularioSendQuoteCorretamente() {
         sendQuotePage
                 .setEmail("email@email.com.br")
                 .setPhone(12345678)
@@ -119,6 +123,19 @@ public class CadastroSteps {
                 .setComments("Comentário")
                 .clickSendButton()
         ;
+    }
+
+    @Then("Realiza cadastro com Sucesso")
+    public void realizaCadastroComSucesso() {
+
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("confirm")));
+
+        String msg = driver.findElement(By.xpath("//div['sweet-alert showSweetAlert visible']//h2")).getText();
+        Assert.assertEquals("Sending e-mail success!", msg);
+
+        driver.findElement(By.xpath("//div['sweet-alert showSweetAlert visible']//button[@class='confirm']")).click();
+
     }
 
 
