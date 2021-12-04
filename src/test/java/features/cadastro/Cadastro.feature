@@ -5,3 +5,4 @@ Feature: Fazer cadastro do seguro do automóvel da Tricentis
 
     Given O usuário confirma se está na página Tricentis
     When Preenche o formulário EnterVehicleData corretamente
+    And Preenche formulário EnterInsurantData corretamente

@@ -23,64 +23,64 @@ public class EnterVehicleDataPage extends BasePage {
     private By headerBy = By.xpath("//*[@id=\"entervehicledata\"]/..");
 
 
-    public EnterVehicleDataPage acessaAbaAutomobileInsurance() {
+    public EnterVehicleDataPage accessAbaAutomobileInsurance() {
 
         driver.findElement(automobileNavBy).click();
         return this;
 
     }
 
-    public boolean estaNaEnterVehicleDataPage() {
+    public boolean isAtEnterVehicleDataPage() {
 
         return driver.findElement(headerBy).getAttribute("class").contains("idealsteps-step-active");
 
     }
 
-    public EnterVehicleDataPage informaMakeByIndex(int index) {
+    public EnterVehicleDataPage setMakeByIndex(int index) {
         Select makeDropDown = new Select(driver.findElement(makeBy));
         makeDropDown.selectByIndex(index);
         return this;
     }
 
-    public EnterVehicleDataPage informaEnginePerformace(int value) {
+    public EnterVehicleDataPage setEnginePerformace(int value) {
         driver.findElement(enginePerformaceBy).sendKeys(Integer.toString(value));
         return this;
     }
 
     //precisa ser uma data inferior ao dia atual
-    public EnterVehicleDataPage informaDateOfManufacture(String date) {
+    public EnterVehicleDataPage setDateOfManufacture(String date) {
         driver.findElement(dateOfManyfactureBy).sendKeys(date);
         return this;
     }
 
-    public EnterVehicleDataPage informaNumberOfSeatsByIndex(int index) {
+    public EnterVehicleDataPage setNumberOfSeatsByIndex(int index) {
         Select seatDropDownm = new Select(driver.findElement(numberOfSeatsBy));
         seatDropDownm.selectByIndex(index);
         return this;
     }
 
-    public EnterVehicleDataPage informaFuelTypeByIndex(int index) {
+    public EnterVehicleDataPage setFuelTypeByIndex(int index) {
         Select fuelDropDown = new Select(driver.findElement(fuelTypeBy));
         fuelDropDown.selectByIndex(index);
         return this;
     }
 
-    public EnterVehicleDataPage informaListPrice(double value) {
+    public EnterVehicleDataPage setListPrice(double value) {
         driver.findElement(listPriceBy).sendKeys(Double.toString(value));
         return this;
     }
 
-    public EnterVehicleDataPage informaLicensePlateNumber(String value) {
+    public EnterVehicleDataPage setLicensePlateNumber(String value) {
         driver.findElement(licensePlateNumberBy).sendKeys(value);
         return this;
     }
 
-    public EnterVehicleDataPage informaAnnualMileage(double value) {
+    public EnterVehicleDataPage setAnnualMileage(double value) {
         driver.findElement(annualMileageBy).sendKeys(Double.toString(value));
         return this;
     }
 
-    public EnterVehicleDataPage clicaNextButton() {
+    public EnterVehicleDataPage clickNextButton() {
         driver.findElement(nextButtonBy).click();
         return this;
     }
