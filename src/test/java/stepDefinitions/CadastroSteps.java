@@ -5,13 +5,11 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.cucumber.java.eo.Se;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pageObjects.EnterInsurantDataPage;
-import pageObjects.EnterProductDataPage;
-import pageObjects.EnterVehicleDataPage;
-import pageObjects.SelectPriceOptionPage;
+import pageObjects.*;
 
 import static org.junit.Assert.*;
 
@@ -23,6 +21,7 @@ public class CadastroSteps {
     private EnterInsurantDataPage enterInsurantDataPage;
     private EnterProductDataPage enterProductDataPage;
     private SelectPriceOptionPage selectPriceOptionPage;
+    private SendQuotePage sendQuotePage;
 
     @Before
     public void setUp() {
@@ -36,6 +35,7 @@ public class CadastroSteps {
         enterInsurantDataPage = new EnterInsurantDataPage(driver);
         enterProductDataPage = new EnterProductDataPage(driver);
         selectPriceOptionPage = new SelectPriceOptionPage(driver);
+        sendQuotePage = new SendQuotePage(driver);
     }
 
     @Given("O usuário acessa a tela de preenchimento de Automobile Insurance")
@@ -106,6 +106,19 @@ public class CadastroSteps {
                 .clickNextButton()
         ;
 
+    }
+
+    @And("Preenche formulário SendQuote corretamente")
+    public void preencheFormularioSendQuoteCorretamente(){
+        sendQuotePage
+                .setEmail("email@email.com.br")
+                .setPhone(12345678)
+                .setUsername("Username")
+                .setPassword("Teste@!123")
+                .setConfirmPassword("Teste@!123")
+                .setComments("Comentário")
+                .clickSendButton()
+        ;
     }
 
 
