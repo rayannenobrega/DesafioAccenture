@@ -11,6 +11,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import pageObjects.EnterInsurantDataPage;
 import pageObjects.EnterProductDataPage;
 import pageObjects.EnterVehicleDataPage;
+import pageObjects.SelectPriceOptionPage;
+
 import static org.junit.Assert.*;
 
 
@@ -20,6 +22,7 @@ public class CadastroSteps {
     private EnterVehicleDataPage enterVehicleDataPage;
     private EnterInsurantDataPage enterInsurantDataPage;
     private EnterProductDataPage enterProductDataPage;
+    private SelectPriceOptionPage selectPriceOptionPage;
 
     @Before
     public void setUp() {
@@ -32,6 +35,7 @@ public class CadastroSteps {
         enterVehicleDataPage = new EnterVehicleDataPage(driver);
         enterInsurantDataPage = new EnterInsurantDataPage(driver);
         enterProductDataPage = new EnterProductDataPage(driver);
+        selectPriceOptionPage = new SelectPriceOptionPage(driver);
     }
 
     @Given("O usuário acessa a tela de preenchimento de Automobile Insurance")
@@ -42,7 +46,7 @@ public class CadastroSteps {
         ;
     }
 
-    @When("Preenche o formulário EnterVehicleData corretamente")
+    @When("Preenche formulário EnterVehicleData corretamente")
     public void preencheFormularioEnterVehicleDataCorretamente(){
         enterVehicleDataPage
                 .accessAbaAutomobileInsurance()
@@ -93,6 +97,15 @@ public class CadastroSteps {
                 .setCourtesyCar(1)
                 .clickNextButton()
         ;
+    }
+
+    @And("Preenche opção de preço no SelectPriceOption corretamente")
+    public void selecionaOpcaoPrecoSelectPriceOptionCorretamente() throws InterruptedException{
+        selectPriceOptionPage
+                .setOptionalSilver()
+                .clickNextButton()
+        ;
+
     }
 
 
