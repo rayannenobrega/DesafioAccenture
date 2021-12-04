@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import pageObjects.EnterInsurantDataPage;
+import pageObjects.EnterProductDataPage;
 import pageObjects.EnterVehicleDataPage;
 import static org.junit.Assert.*;
 
@@ -18,6 +19,7 @@ public class CadastroSteps {
     private WebDriver driver;
     private EnterVehicleDataPage enterVehicleDataPage;
     private EnterInsurantDataPage enterInsurantDataPage;
+    private EnterProductDataPage enterProductDataPage;
 
     @Before
     public void setUp() {
@@ -29,10 +31,11 @@ public class CadastroSteps {
 
         enterVehicleDataPage = new EnterVehicleDataPage(driver);
         enterInsurantDataPage = new EnterInsurantDataPage(driver);
+        enterProductDataPage = new EnterProductDataPage(driver);
     }
 
-    @Given("O usuário confirma se está na página Tricentis")
-    public void usuarioEntraNaPaginaTricentis() {
+    @Given("O usuário acessa a tela de preenchimento de Automobile Insurance")
+    public void usuarioAcessaAutomobileInsurance() {
 
         assertTrue(enterVehicleDataPage
                 .isAtEnterVehicleDataPage())
@@ -68,10 +71,29 @@ public class CadastroSteps {
                 .setZipCode("11000222")
                 .setCity("João Pessoa")
                 .setOccupation(1)
+                .setHobbieBungeeJumping()
+                .setHobbieSkydiving()
+                .setHobbieSpeeding()
                 .setHobbieCliffDiving()
+                .setHobbieOther()
                 .setWebsite("www.site.com.br")
                 .clickNextButton()
         ;
     }
+
+    @And("Preenche formulário EnterProductData corretamente")
+    public void preencheFormularioEnterProductDataCorretamente(){
+        enterProductDataPage
+                .setStartDate("04/04/2022")
+                .setInsuranceSum(1)
+                .setMeritRating(1)
+                .setDamageInsurance(1)
+                .setOptionalProductEuro()
+                .setOptionalProductLegal()
+                .setCourtesyCar(1)
+                .clickNextButton()
+        ;
+    }
+
 
 }
