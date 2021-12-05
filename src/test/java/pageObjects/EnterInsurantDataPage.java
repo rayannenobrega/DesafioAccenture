@@ -11,25 +11,25 @@ public class EnterInsurantDataPage extends BasePage {
         super(driver);
     }
 
-    private By firstNameBy = By.id("firstname");
-    private By lastNameBy = By.id("lastname");
-    private By dateOfBirthBy = By.id("birthdate");
-    private By genderMaleBy = By.xpath("//input[@id=\"gendermale\"]/..");
-    private By genderFemaleBy = By.xpath("//input[@id=\"genderfemale\"]/..");
-    private By streetAddressBy = By.id("streetaddress");
-    private By countryBy = By.id("country");
-    private By zipCodeBy = By.id("zipcode");
-    private By cityBy = By.id("city");
-    private By occupationBy = By.id("occupation");
-    private By hobbieSpeedingBy = By.xpath("//input[@id=\"speeding\"]/..");
-    private By hobbieBungeeJumpingBy = By.xpath("//input[@id=\"bungeejumping\"]/..");
-    private By hobbieCliffDivingBy = By.xpath("//input[@id=\"cliffdiving\"]/..");
-    private By hobbieSkydivingBy = By.xpath("//input[@id=\"skydiving\"]/..");
-    private By hobbieOtherBy = By.xpath("//input[@id=\"other\"]/..");
-    private By websiteBy = By.id("website");
-    private By pictureBy = By.id("picture");
-    private By pictureFileBy = By.id("picturecontainer");
-    private By nextButtonBy = By.id("nextenterproductdata");
+    private final By firstNameBy = By.id("firstname");
+    private final By lastNameBy = By.id("lastname");
+    private final By dateOfBirthBy = By.id("birthdate");
+    private final By genderMaleBy = By.xpath("//input[@id=\"gendermale\"]/..");
+    private final By genderFemaleBy = By.xpath("//input[@id=\"genderfemale\"]/..");
+    private final By streetAddressBy = By.id("streetaddress");
+    private final By countryBy = By.id("country");
+    private final By zipCodeBy = By.id("zipcode");
+    private final By cityBy = By.id("city");
+    private final By occupationBy = By.id("occupation");
+    private final By hobbieSpeedingBy = By.xpath("//input[@id=\"speeding\"]/..");
+    private final By hobbieBungeeJumpingBy = By.xpath("//input[@id=\"bungeejumping\"]/..");
+    private final By hobbieCliffDivingBy = By.xpath("//input[@id=\"cliffdiving\"]/..");
+    private final By hobbieSkydivingBy = By.xpath("//input[@id=\"skydiving\"]/..");
+    private final By hobbieOtherBy = By.xpath("//input[@id=\"other\"]/..");
+    private final By websiteBy = By.id("website");
+    private final By pictureBy = By.id("picture");
+    private final By pictureFileBy = By.id("picturecontainer");
+    private final By nextButtonBy = By.id("nextenterproductdata");
 
 
     public EnterInsurantDataPage setFirstName(String name) {

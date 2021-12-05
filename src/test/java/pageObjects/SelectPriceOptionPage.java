@@ -11,11 +11,11 @@ public class SelectPriceOptionPage extends BasePage {
         super(driver);
     }
 
-    private By selectOptionSilverBy = By.xpath("//input[@id=\"selectsilver\"]/..");
-    private By selectOptionGoldBy = By.xpath("//input[@id=\"selectgold\"]/..");
-    private By selectOptionPlatiniumBy = By.xpath("//input[@id=\"selectplatinum\"]/..");
-    private By selectOptionUltimateBy = By.xpath("//input[@id=\"selectultimate\"]/..");
-    private By nextButtonBy = By.id("nextsendquote");
+    private final By selectOptionSilverBy = By.xpath("//input[@id=\"selectsilver\"]/..");
+    private final By selectOptionGoldBy = By.xpath("//input[@id=\"selectgold\"]/..");
+    private final By selectOptionPlatiniumBy = By.xpath("//input[@id=\"selectplatinum\"]/..");
+    private final By selectOptionUltimateBy = By.xpath("//input[@id=\"selectultimate\"]/..");
+    private final By nextButtonBy = By.id("nextsendquote");
 
     public SelectPriceOptionPage setOptionalSilver() {
         driver.findElement(selectOptionSilverBy).click();

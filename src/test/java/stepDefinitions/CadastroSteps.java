@@ -39,6 +39,12 @@ public class CadastroSteps {
         sendQuotePage = new SendQuotePage(driver);
     }
 
+    @After
+    public void tearDown(){
+        driver.manage().deleteAllCookies();
+        driver.quit();
+    }
+
     @Given("O usuário acessa a tela de preenchimento de Automobile Insurance")
     public void usuarioAcessaAutomobileInsurance() {
 
@@ -47,7 +53,7 @@ public class CadastroSteps {
         ;
     }
 
-    @When("Preenche formulário EnterVehicleData corretamente")
+    @And("Preenche formulário EnterVehicleData corretamente")
     public void preencheFormularioEnterVehicleDataCorretamente() {
         enterVehicleDataPage
                 .accessAbaAutomobileInsurance()
@@ -119,8 +125,15 @@ public class CadastroSteps {
                 .setPassword("Teste@!123")
                 .setConfirmPassword("Teste@!123")
                 .setComments("Comentário")
+        ;
+    }
+
+    @When("Clica no botão de enviar e finalizar cadastro")
+    public void clicaNoBotaoEnviarCadastro(){
+        sendQuotePage
                 .clickSendButton()
         ;
+
     }
 
     @Then("Realiza cadastro com Sucesso")
@@ -128,14 +141,9 @@ public class CadastroSteps {
 
         sendQuotePage
                 .isCadastroRealizadoComSucesso()
-                .clickOkButton()
+                .clickSweetAlertButton()
         ;
 
     }
 
-    @After
-    public void tearDown(){
-        driver.manage().deleteAllCookies();
-        driver.quit();
-    }
 }

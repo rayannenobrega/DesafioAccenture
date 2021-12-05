@@ -12,15 +12,15 @@ public class SendQuotePage extends BasePage {
         super(driver);
     }
 
-    private By emailBy = By.id("email");
-    private By phoneBy = By.id("phone");
-    private By usernameBy = By.id("username");
-    private By passwordBy = By.id("password");
-    private By confirmPasswordBy = By.id("confirmpassword");
-    private By commentsBy = By.id("Comments");
-    private By sendButtonBy = By.id("sendemail");
-    private By sweetAlertMsgBy = By.xpath("//div['sweet-alert showSweetAlert visible']//h2");
-    private By sweetAlertButtonBy = By.xpath("//div['sweet-alert showSweetAlert visible']//button[@class='confirm']");
+    private final By emailBy = By.id("email");
+    private final By phoneBy = By.id("phone");
+    private final By usernameBy = By.id("username");
+    private final By passwordBy = By.id("password");
+    private final By confirmPasswordBy = By.id("confirmpassword");
+    private final By commentsBy = By.id("Comments");
+    private final By sendButtonBy = By.id("sendemail");
+    private final By sweetAlertMsgBy = By.xpath("//div['sweet-alert showSweetAlert visible']//h2");
+    private final By sweetAlertButtonBy = By.xpath("//div['sweet-alert showSweetAlert visible']//button[@class='confirm']");
 
     public SendQuotePage setEmail(String email) {
         driver.findElement(emailBy).sendKeys(email);
@@ -66,7 +66,7 @@ public class SendQuotePage extends BasePage {
         return this;
     }
 
-    public SendQuotePage clickOkButton(){
+    public SendQuotePage clickSweetAlertButton(){
         driver.findElement(sweetAlertButtonBy).click();
         return this;
     }

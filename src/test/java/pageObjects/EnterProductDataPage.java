@@ -10,14 +10,14 @@ public class EnterProductDataPage extends BasePage {
         super(driver);
     }
 
-    private By startDateBy = By.id("startdate");
-    private By insuranceSumBy = By.id("insurancesum");
-    private By meritRatingBy = By.id("meritrating");
-    private By damageInsuranceBy = By.id("damageinsurance");
-    private By optionalProductsEuroBy = By.xpath("//input[@id=\"EuroProtection\"]/..");
-    private By optionalProductsLegalBy = By.xpath("//input[@id=\"LegalDefenseInsurance\"]/..");
-    private By courtesyCarBy = By.id("courtesycar");
-    private By nextButtonBy = By.id("nextselectpriceoption");
+    private final By startDateBy = By.id("startdate");
+    private final By insuranceSumBy = By.id("insurancesum");
+    private final By meritRatingBy = By.id("meritrating");
+    private final By damageInsuranceBy = By.id("damageinsurance");
+    private final By optionalProductsEuroBy = By.xpath("//input[@id=\"EuroProtection\"]/..");
+    private final By optionalProductsLegalBy = By.xpath("//input[@id=\"LegalDefenseInsurance\"]/..");
+    private final By courtesyCarBy = By.id("courtesycar");
+    private final By nextButtonBy = By.id("nextselectpriceoption");
 
     //precisa ser 1 mês no futuro
     public EnterProductDataPage setStartDate(String date) {

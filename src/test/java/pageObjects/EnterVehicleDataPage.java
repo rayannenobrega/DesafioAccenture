@@ -10,17 +10,17 @@ public class EnterVehicleDataPage extends BasePage {
         super(driver);
     }
 
-    private By automobileNavBy = By.id("nav_automobile");
-    private By makeBy = By.id("make");
-    private By enginePerformaceBy = By.id("engineperformance");
-    private By dateOfManyfactureBy = By.id("dateofmanufacture");
-    private By numberOfSeatsBy = By.id("numberofseats");
-    private By fuelTypeBy = By.id("fuel");
-    private By listPriceBy = By.id("listprice");
-    private By licensePlateNumberBy = By.id("licenseplatenumber");
-    private By annualMileageBy = By.id("annualmileage");
-    private By nextButtonBy = By.id("nextenterinsurantdata");
-    private By headerBy = By.xpath("//*[@id=\"entervehicledata\"]/..");
+    private final By automobileNavBy = By.id("nav_automobile");
+    private final By makeBy = By.id("make");
+    private final By enginePerformaceBy = By.id("engineperformance");
+    private final By dateOfManyfactureBy = By.id("dateofmanufacture");
+    private final By numberOfSeatsBy = By.id("numberofseats");
+    private final By fuelTypeBy = By.id("fuel");
+    private final By listPriceBy = By.id("listprice");
+    private final By licensePlateNumberBy = By.id("licenseplatenumber");
+    private final By annualMileageBy = By.id("annualmileage");
+    private final By nextButtonBy = By.id("nextenterinsurantdata");
+    private final By headerBy = By.xpath("//*[@id=\"entervehicledata\"]/..");
 
 
     public EnterVehicleDataPage accessAbaAutomobileInsurance() {
