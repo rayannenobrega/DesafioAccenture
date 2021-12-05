@@ -3,11 +3,11 @@ Feature: Fazer cadastro do seguro do automóvel da Tricentis
 
   Scenario: Cadastro bem sucedido
 
-    Given O usuário acessa a tela de preenchimento de Automobile Insurance
-    And Preenche formulário EnterVehicleData corretamente
-    And Preenche formulário EnterInsurantData corretamente
-    And Preenche formulário EnterProductData corretamente
-    And Preenche opção de preço no SelectPriceOption corretamente
-    And Preenche formulário SendQuote corretamente
-    When Clica no botão de enviar e finalizar cadastro
+    Given O usuario acessa a tela de preenchimento de Automobile Insurance
+    And Preenche formulario EnterVehicleData corretamente
+    And Preenche formulario EnterInsurantData corretamente
+    And Preenche formulario EnterProductData corretamente
+    And Preenche opcao de preco no SelectPriceOption corretamente
+    And Preenche formulario SendQuote corretamente
+    When Clica no botao de enviar e finalizar cadastro
     Then Realiza cadastro com Sucesso

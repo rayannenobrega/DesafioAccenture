@@ -42,7 +42,7 @@ public class CadastroSteps {
         driver.quit();
     }
 
-    @Given("O usuário acessa a tela de preenchimento de Automobile Insurance")
+    @Given("O usuario acessa a tela de preenchimento de Automobile Insurance")
     public void usuarioAcessaAutomobileInsurance() {
 
         assertTrue(enterVehicleDataPage
@@ -50,7 +50,7 @@ public class CadastroSteps {
         ;
     }
 
-    @And("Preenche formulário EnterVehicleData corretamente")
+    @And("Preenche formulario EnterVehicleData corretamente")
     public void preencheFormularioEnterVehicleDataCorretamente() {
         enterVehicleDataPage
                 .accessAbaAutomobileInsurance()
@@ -67,7 +67,7 @@ public class CadastroSteps {
 
     }
 
-    @And("Preenche formulário EnterInsurantData corretamente")
+    @And("Preenche formulario EnterInsurantData corretamente")
     public void preencheFormularioEnterInsurantDataCorretamente() {
         enterInsurantDataPage
                 .setFirstName("Nome")
@@ -90,7 +90,7 @@ public class CadastroSteps {
         ;
     }
 
-    @And("Preenche formulário EnterProductData corretamente")
+    @And("Preenche formulario EnterProductData corretamente")
     public void preencheFormularioEnterProductDataCorretamente() {
         enterProductDataPage
                 .setStartDate(Utils.criaDataFuturaByAnos(1))
@@ -104,7 +104,7 @@ public class CadastroSteps {
         ;
     }
 
-    @And("Preenche opção de preço no SelectPriceOption corretamente")
+    @And("Preenche opcao de preco no SelectPriceOption corretamente")
     public void selecionaOpcaoPrecoSelectPriceOptionCorretamente() throws InterruptedException {
         selectPriceOptionPage
                 .setOptionalSilver()
@@ -113,7 +113,7 @@ public class CadastroSteps {
 
     }
 
-    @And("Preenche formulário SendQuote corretamente")
+    @And("Preenche formulario SendQuote corretamente")
     public void preencheFormularioSendQuoteCorretamente() {
         sendQuotePage
                 .setEmail("email@email.com.br")
@@ -121,11 +121,11 @@ public class CadastroSteps {
                 .setUsername("Username")
                 .setPassword("Teste@!123")
                 .setConfirmPassword("Teste@!123")
-                .setComments("Comentário")
+                .setComments("Comentario")
         ;
     }
 
-    @When("Clica no botão de enviar e finalizar cadastro")
+    @When("Clica no botao de enviar e finalizar cadastro")
     public void clicaNoBotaoEnviarCadastro(){
         sendQuotePage
                 .clickSendButton()
