@@ -19,7 +19,6 @@ public class EnterProductDataPage extends BasePage {
     private final By courtesyCarBy = By.id("courtesycar");
     private final By nextButtonBy = By.id("nextselectpriceoption");
 
-    //precisa ser 1 mês no futuro
     public EnterProductDataPage setStartDate(String date) {
         driver.findElement(startDateBy).sendKeys(date);
         return this;

@@ -43,5 +43,4 @@ public class SelectPriceOptionPage extends BasePage {
         driver.findElement(nextButtonBy).click();
         return this;
     }
-
 }

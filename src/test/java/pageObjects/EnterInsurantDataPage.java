@@ -2,7 +2,6 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class EnterInsurantDataPage extends BasePage {
@@ -42,7 +41,6 @@ public class EnterInsurantDataPage extends BasePage {
         return this;
     }
 
-    //precisa ter 18 anos
     public EnterInsurantDataPage setDateOfBirth(String date) {
         driver.findElement(dateOfBirthBy).sendKeys(date);
         return this;
@@ -85,7 +83,6 @@ public class EnterInsurantDataPage extends BasePage {
         return this;
     }
 
-    // Hobbies
     public EnterInsurantDataPage setHobbieSpeeding() {
         driver.findElement(hobbieSpeedingBy).click();
         return this;
@@ -110,18 +107,16 @@ public class EnterInsurantDataPage extends BasePage {
         driver.findElement(hobbieOtherBy).click();
         return this;
     }
-    //Fim de Hobbies
 
     public EnterInsurantDataPage setWebsite(String site) {
         driver.findElement(websiteBy).sendKeys(site);
         return this;
     }
 
-    public EnterInsurantDataPage uploadPicture(){
+    public EnterInsurantDataPage uploadPicture() {
         driver.findElement(pictureFileBy).sendKeys(System.getProperty("user.dir") + "/assets/img.jpg");
         driver.findElement(pictureBy).sendKeys("img.jpg");
         return this;
-
     }
 
     public EnterInsurantDataPage clickNextButton() {

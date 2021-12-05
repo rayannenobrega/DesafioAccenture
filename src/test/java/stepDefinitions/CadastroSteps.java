@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import pageObjects.*;
+import utils.Utils;
 
 import static org.junit.Assert.assertTrue;
 
@@ -59,7 +60,7 @@ public class CadastroSteps {
                 .accessAbaAutomobileInsurance()
                 .setMakeByIndex(1)
                 .setEnginePerformace(2000)
-                .setDateOfManufacture("04/04/2021")
+                .setDateOfManufacture(Utils.criaDataAnteriorByAnos(3))
                 .setNumberOfSeatsByIndex(1)
                 .setFuelTypeByIndex(1)
                 .setListPrice(45000)
@@ -75,7 +76,7 @@ public class CadastroSteps {
         enterInsurantDataPage
                 .setFirstName("Nome")
                 .setLastName("Sobrenome")
-                .setDateOfBirth("04/04/2000")
+                .setDateOfBirth(Utils.criaDataAnteriorByAnos(20))
                 .setGenderFemale()
                 .setStreetAddress("Rua teste teste teste")
                 .setCountry(1)
@@ -96,7 +97,7 @@ public class CadastroSteps {
     @And("Preenche formulário EnterProductData corretamente")
     public void preencheFormularioEnterProductDataCorretamente() {
         enterProductDataPage
-                .setStartDate("04/04/2022")
+                .setStartDate(Utils.criaDataFuturaByAnos(1))
                 .setInsuranceSum(1)
                 .setMeritRating(1)
                 .setDamageInsurance(1)

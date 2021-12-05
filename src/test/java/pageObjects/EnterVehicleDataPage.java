@@ -24,16 +24,12 @@ public class EnterVehicleDataPage extends BasePage {
 
 
     public EnterVehicleDataPage accessAbaAutomobileInsurance() {
-
         driver.findElement(automobileNavBy).click();
         return this;
-
     }
 
     public boolean isAtEnterVehicleDataPage() {
-
         return driver.findElement(headerBy).getAttribute("class").contains("idealsteps-step-active");
-
     }
 
     public EnterVehicleDataPage setMakeByIndex(int index) {
@@ -47,7 +43,6 @@ public class EnterVehicleDataPage extends BasePage {
         return this;
     }
 
-    //precisa ser uma data inferior ao dia atual
     public EnterVehicleDataPage setDateOfManufacture(String date) {
         driver.findElement(dateOfManyfactureBy).sendKeys(date);
         return this;
@@ -84,5 +79,4 @@ public class EnterVehicleDataPage extends BasePage {
         driver.findElement(nextButtonBy).click();
         return this;
     }
-
 }

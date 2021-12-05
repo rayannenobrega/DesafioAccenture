@@ -58,7 +58,6 @@ public class SendQuotePage extends BasePage {
     }
 
     public SendQuotePage isCadastroRealizadoComSucesso(){
-
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("confirm")));
         String msg = driver.findElement(sweetAlertMsgBy).getText();
@@ -70,6 +69,4 @@ public class SendQuotePage extends BasePage {
         driver.findElement(sweetAlertButtonBy).click();
         return this;
     }
-
-
 }
