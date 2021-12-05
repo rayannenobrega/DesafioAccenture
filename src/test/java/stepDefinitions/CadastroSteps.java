@@ -8,8 +8,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.After;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import pageObjects.*;
 import utils.Utils;
 
@@ -25,12 +23,10 @@ public class CadastroSteps {
     private SelectPriceOptionPage selectPriceOptionPage;
     private SendQuotePage sendQuotePage;
 
+
     @Before
     public void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        driver = new ChromeDriver(options);
-
+        driver = Utils.createChromeAsWebDriver(driver);
         driver.get("http://sampleapp.tricentis.com/101/app.php");
 
         enterVehicleDataPage = new EnterVehicleDataPage(driver);

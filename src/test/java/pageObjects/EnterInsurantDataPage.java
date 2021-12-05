@@ -114,7 +114,7 @@ public class EnterInsurantDataPage extends BasePage {
     }
 
     public EnterInsurantDataPage uploadPicture() {
-        driver.findElement(pictureFileBy).sendKeys(System.getProperty("user.dir") + "/assets/img.jpg");
+        driver.findElement(pictureFileBy).sendKeys(System.getProperty("user.dir") + "/assets/images/img.jpg");
         driver.findElement(pictureBy).sendKeys("img.jpg");
         return this;
     }
