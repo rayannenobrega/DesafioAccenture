@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class EnterInsurantDataPage extends BasePage {
@@ -27,15 +28,9 @@ public class EnterInsurantDataPage extends BasePage {
     private By hobbieOtherBy = By.xpath("//input[@id=\"other\"]/..");
     private By websiteBy = By.id("website");
     private By pictureBy = By.id("picture");
-    // private By headerBy = By.xpath("//*[@id=\"enterinsurantdata\"]/..");
+    private By pictureFileBy = By.id("picturecontainer");
     private By nextButtonBy = By.id("nextenterproductdata");
 
-
-//    public boolean isAtEnterInsuranceDataPage() {
-//
-//        return driver.findElement(headerBy).getAttribute("class").contains("idealsteps-step-active");
-//
-//    }
 
     public EnterInsurantDataPage setFirstName(String name) {
         driver.findElement(firstNameBy).sendKeys(name);
@@ -120,6 +115,13 @@ public class EnterInsurantDataPage extends BasePage {
     public EnterInsurantDataPage setWebsite(String site) {
         driver.findElement(websiteBy).sendKeys(site);
         return this;
+    }
+
+    public EnterInsurantDataPage uploadPicture(){
+        driver.findElement(pictureFileBy).sendKeys(System.getProperty("user.dir") + "/assets/img.jpg");
+        driver.findElement(pictureBy).sendKeys("img.jpg");
+        return this;
+
     }
 
     public EnterInsurantDataPage clickNextButton() {

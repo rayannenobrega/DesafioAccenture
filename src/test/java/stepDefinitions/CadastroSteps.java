@@ -82,6 +82,7 @@ public class CadastroSteps {
                 .setHobbieCliffDiving()
                 .setHobbieOther()
                 .setWebsite("www.site.com.br")
+                .uploadPicture()
                 .clickNextButton()
         ;
     }
