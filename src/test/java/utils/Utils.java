@@ -10,12 +10,12 @@ import java.time.format.DateTimeFormatter;
 public class Utils {
 
     public static String criaDataFuturaByAnos(int anos){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         return LocalDate.now().plusYears(anos).format(formatter);
     }
 
     public static String criaDataAnteriorByAnos(int anos){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         return LocalDate.now().minusYears(anos).format(formatter);
     }
 
